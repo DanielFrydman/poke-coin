@@ -3,7 +3,7 @@ import * as sweetalert2 from "sweetalert2"
 
 window.addEventListener(('turbo:load'), () => {
   let flashNotice = document.getElementsByClassName('flash-notice')[0];
-  let flasAlert = document.getElementsByClassName('flash-notice')[0];
+  let flasAlert = document.getElementsByClassName('flash-alert')[0];
   if (flashNotice != undefined) {
     Swal.fire({
       position: 'top-end',
