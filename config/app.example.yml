@@ -1,0 +1,5 @@
+development:
+  coin_api_key: 'your-key'
+
+test:
+  coin_api_key: 'your-key'

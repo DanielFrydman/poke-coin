@@ -12,6 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/config/database.yml
+/config/app.yml
+.byebug_history
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -29,3 +32,4 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+config/database.yml
