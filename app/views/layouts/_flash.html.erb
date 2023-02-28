@@ -1,11 +1,11 @@
 <% if flash[:notice] || flash[:alert] %>
   <% if flash[:notice] %>
-    <div class="flash-notice">
+    <div class="flash-notice" style="position: absolute;">
       <%= flash[:notice] %>
     </div>
   <% end %>
   <% if flash[:alert] %>
-    <div class="flash-alert">
+    <div class="flash-alert" style="position: absolute;">
       <%= flash[:alert] %>
     </div>
   <% end %>
