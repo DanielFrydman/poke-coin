@@ -22,7 +22,7 @@
         <label style="margin-top: 15px;"> <%= current_user.email %></label>
         <%= image_tag(current_user.avatar, size: "50", style: 'margin: 0px 20px 0px 10px;') %>
       </a>
-      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-block', style: 'background-color: #f6a400; color: #8b2900; font-weight: bold;' %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-block', style: 'background-color: #f6a400; color: #8b2900; font-weight: bold;', form_class: 'sign-out' %>
     </div>
   </div>
 </nav>
