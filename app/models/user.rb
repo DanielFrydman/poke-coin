@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :lockable, :trackable
 
+  has_one :wallet, dependent: :destroy
+
   def avatar
     read_attribute('avatar') || DEFAULT_AVATAR
   end
