@@ -18,6 +18,9 @@
       </li>
     </ul>
     <div class="d-flex align-items-center" style="cursor: pointer;">
+      <div>
+        Funds: <%= number_to_currency(current_user.walelt_usd_amount) %> | &nbsp;
+      </div>
       <a href="/users/edit" class="text-format" style="text-decoration:none;">
         <label style="margin-top: 15px;"> <%= current_user.name %></label>
         <%= image_tag(current_user.avatar, size: "50", style: 'margin: 0px 20px 0px 10px;') %>
