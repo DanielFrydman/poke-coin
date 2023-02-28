@@ -14,4 +14,8 @@ class User < ApplicationRecord
   def walelt_usd_amount
     wallet.usd_amount
   end
+
+  def update_wallet_amount_with_transaction(transaction)
+    wallet.update_amount_with_transaction(transaction)
+  end
 end
