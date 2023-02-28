@@ -16,7 +16,7 @@ module Cryptocurrency
     protected
 
     def raise_communication_error(error)
-      raise CriptocurrencyCommunicationError, error
+      raise CryptocurrencyCommunicationError, error
     end
   end
 end
