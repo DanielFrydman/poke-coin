@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def avatar
     read_attribute('avatar') || DEFAULT_AVATAR
   end
+
+  def walelt_usd_amount
+    wallet.usd_amount
+  end
 end
