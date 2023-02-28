@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg bg-light text-format">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <%= image_tag('pokecoin_logo.png', style: 'height: 55px; margin: 0px -10px 0px -10px;') %>
+    </a>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link text-format" href="/pokemons_purchase/index">Buy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-format" href="/pokemons_sale/index">Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-format" href="/history">History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-format" href="/funds/index">Add Funds</a>
+      </li>
+    </ul>
+    <div class="d-flex align-items-center" style="cursor: pointer;">
+      <a href="/users/edit" class="text-format" style="text-decoration:none;">
+        <label style="margin-top: 15px;"> <%= current_user.email %></label>
+        <%= image_tag(current_user.avatar, size: "50", style: 'margin: 0px 20px 0px 10px;') %>
+      </a>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-block', style: 'background-color: #f6a400; color: #8b2900; font-weight: bold;' %>
+    </div>
+  </div>
+</nav>
