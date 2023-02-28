@@ -10,8 +10,10 @@
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag asset_path('svgviewer-output.ico') %>
 </head>
-  <body>
+  <body class="application-body">
     <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
