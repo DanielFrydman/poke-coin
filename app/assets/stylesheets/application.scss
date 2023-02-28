@@ -5,3 +5,26 @@
   color: #8b2900 !important;
   font-weight: bold;
 }
+
+.application-body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #ffd57b;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.flash-notice {
+  visibility: hidden;
+  opacity: 0.0;
+}
+
+.flash-alert {
+  visibility: hidden;
+  opacity: 0.0;
+}
