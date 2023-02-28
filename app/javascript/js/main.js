@@ -2,6 +2,26 @@ import Swal from "sweetalert2"
 import * as sweetalert2 from "sweetalert2"
 
 window.addEventListener(('turbo:load'), () => {
+  let flashNotice = document.getElementsByClassName('flash-notice')[0];
+  let flasAlert = document.getElementsByClassName('flash-notice')[0];
+  if (flashNotice != undefined) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `${flashNotice.innerHTML}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  if (flasAlert != undefined ) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: `${flasAlert.innerHTML}`,
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
   document.addEventListener('submit', (event) => {
     if (event.target && event.target.className === 'sign-out') {
       event.preventDefault()
@@ -54,24 +74,5 @@ window.addEventListener(('turbo:load'), () => {
         })
         .catch(event.preventDefault())
     }
-
-    if (event.target && event.target.className === 'side-success') {
-      event.preventDefault()
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Your work has been saved',
-        showConfirmButton: false,
-        timer: 1500
-      })
-        .then((result) => {
-          if (result.isConfirmed) {
-            document.querySelector('.side-success').submit()
-          }
-        })
-        .catch(event.preventDefault())
-    }
-
-
   })
 })
