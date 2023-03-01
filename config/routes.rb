@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   get '/funds/index', to: 'funds#index'
   post '/funds/buy', to: 'funds#buy'
+
+  get 'history', to: 'history#index'
 end
