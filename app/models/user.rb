@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def add_funds(usd_quantity)
     wallet.add_funds(usd_quantity)
   end
+
+  def transactions
+    wallet.transactions
+  end
 end
