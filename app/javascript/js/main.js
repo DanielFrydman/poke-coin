@@ -23,7 +23,7 @@ window.addEventListener(('turbo:load'), () => {
     })
   }
   document.addEventListener('submit', (event) => {
-    if (event.target && event.target.className === 'sign-out') {
+    if (event.target && event.target.className === 'are-you-sure') {
       event.preventDefault()
       Swal.fire({
         title: 'Are you sure?',
@@ -35,7 +35,7 @@ window.addEventListener(('turbo:load'), () => {
       })
         .then((result) => {
           if (result.isConfirmed) {
-            document.querySelector('.sign-out').submit()
+            document.querySelector('.are-you-sure').submit()
           }
         })
         .catch(event.preventDefault())
