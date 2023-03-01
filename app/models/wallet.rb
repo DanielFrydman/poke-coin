@@ -13,6 +13,12 @@ class Wallet < ApplicationRecord
     transactions.where(sold: false)
   end
 
+  def add_funds(usd_quantity)
+    self.usd_amount += usd_quantity
+
+    self.save!
+  end
+
   private
 
   def update_with_buy_transaction(transaction)
