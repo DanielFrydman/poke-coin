@@ -1,0 +1,32 @@
+<% if @all_transactions.any? %>
+<table class="table margin-bottom-50">
+  <thead>
+    <tr>
+      <th scope="col" class="text-format">ID</th>
+      <th scope="col" class="text-format">Pokemon ID</th>
+      <th scope="col" class="text-format">Pokemon Name</th>
+      <th scope="col" class="text-format">Pokemon Base Experience</th>
+      <th scope="col" class="text-format">USD Amount Spent</th>
+      <th scope="col" class="text-format">BTC Amount Acquired</th>
+      <th scope="col" class="text-format">Operation</th>
+      <th scope="col" class="text-format">Sold</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @all_transactions.each do |transaction| %>
+    <tr>
+      <th><%= transaction.id %></th>
+      <td><%= transaction.pokemon_id %></td>
+      <td><%= transaction.pokemon_name_capitalized %></td>
+      <td><%= transaction.pokemon_base_experience %></td>
+      <td><%= number_to_currency(transaction.usd_amount, precision: 6) %></td>
+      <td><%= transaction.btc_amount %></td>
+      <td><%= transaction.operation_capitalized %></td>
+      <td><%= transaction.sold_translation %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% else %>
+  <h2 class="align-app-body">You don't have Transactions yet...</h2>
+<% end %>
