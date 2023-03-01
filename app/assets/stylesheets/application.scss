@@ -7,9 +7,6 @@
 }
 
 .application-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   background-color: #ffd57b;
 }
 
@@ -27,4 +24,58 @@ footer {
 .flash-alert {
   visibility: hidden;
   opacity: 0.0;
+}
+
+.carousel {
+  margin-top: 52px !important;
+  margin: auto;
+  width: 40%;
+}
+
+.carousel-inner {
+  height: 250px;
+}
+
+.carousel-caption {
+  border-radius: 1rem;
+  position: initial;
+  top: 50%;
+}
+
+.carousel-indicators {
+  position: initial;
+}
+
+.pokemon-appreciation{
+  background-color: #90EE90;
+}
+
+.pokemon-depreciation{
+  background-color: #F08080;
+}
+
+.pokemon-neutral{
+  background-color: #FAFAD2;
+}
+
+.display-list-item{
+  display: list-item !important;
+}
+
+@media only screen and (max-width: 770px) {
+.carousel {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width:771px) and (max-width:1040px) {
+.carousel {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width:1041) {
+  .carousel {
+    width: 90%;
+  }
 }
