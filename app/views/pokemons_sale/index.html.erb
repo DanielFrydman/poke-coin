@@ -1,49 +1,32 @@
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <%= form_with url: "/pokemons_sale/sell", method: :post do |form| %>
+<% if @transactions.any? %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" class="text-format">ID</th>
+      <th scope="col" class="text-format">Pokemon Name</th>
+      <th scope="col" class="text-format">USD Amount Spent</th>
+      <th scope="col" style="color: #e63900; font-weight: bold;">USD Amount Now</th>
+      <th scope="col" class="text-format">Button</th>
+    </tr>
+  </thead>
+  <tbody>
     <% @transactions.each do |transaction| %>
-      <% if transaction == @transactions.first %>
-        <div class="carousel-item active">
+      <% if transaction.btc_amount * @bitcoin_price > transaction.usd_amount  %>
+        <tr class="table-success">
+      <% elsif transaction.btc_amount * @bitcoin_price < transaction.usd_amount %>
+        <tr class="table-danger">
       <% else %>
-        <div class="carousel-item">
+        <tr class="table-warning">
       <% end %>
-        <%= form.hidden_field :transaction_id, value: transaction.id %>
-        <%= form.hidden_field :bitcoin_price, value: @bitcoin_price %>
-        <% if transaction.btc_amount * @bitcoin_price > transaction.usd_amount %>
-          <div class="carousel-caption d-flex align-items-center flex-column pokemon-appreciation">
-        <% elsif transaction.btc_amount * @bitcoin_price < transaction.usd_amount %>
-          <div class="carousel-caption d-flex align-items-center flex-column pokemon-depreciation">
-        <% else %>
-          <div class="carousel-caption d-flex align-items-center flex-column pokemon-neutral">
-        <% end %>
-            <label class="text-format">Pokemon Name:</label>
-            <%= transaction.pokemon_name_capitalized %>
-            <label class="text-format">USD Amount Spent:</label>
-            <%= number_to_currency(transaction.usd_amount, precision: 6) %>
-            <label style="color: #e63900; font-weight: bold;">USD Amount Now:</label>
-            <%= number_to_currency(transaction.btc_amount * @bitcoin_price, precision: 6) %>
-            <%= form.submit "Sell", class: 'btn btn-block mt-3 text-format', style: 'background-color: #f6a400; font-weight: bold;' %>
-          </div>
-        </div>
-      <% end %>
+        <th><%= transaction.id %></th>
+        <td><%= transaction.pokemon_name_capitalized %></td>
+        <td><%= number_to_currency(transaction.usd_amount, precision: 6) %></td>
+        <td><%= number_to_currency(transaction.btc_amount * @bitcoin_price, precision: 6) %></td>
+        <td><%= button_to 'Sell', pokemons_sale_sell_path, params: { transaction_id: transaction.id, bitcoin_price: @bitcoin_price }, method: :post, class: 'btn btn-block text-format', style: 'background-color: #f6a400; font-weight: bold;', form_class: 'sign-out' %></td>
+      </tr>
     <% end %>
-  </div>
-  <div class="carousel-indicators">
-    <% @transactions.each_with_index do |transaction, index| %>
-      <% if transaction == @transactions.first %>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= index %>" class="active" aria-current="true"></button>
-      <% else %>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= index %>"></button>
-      <% end %>
-    <% end %>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
+  </tbody>
+</table>
+<% else %>
+  <h1 class="carousel">You don't have Pokemons yet...</h1>
+<% end %>
