@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card">
+    <div class="card-body">
+      <%= form_with url: "/funds/buy", method: :post do |form| %>
+        <div class="form-group d-flex flex-column" style="width: 295px;">
+          <label class="text-format mb-2">How much money do you want to add?</label>
+          <%= form.number_field :usd_quantity, class: 'form-control', min: 0.1, step: 0.1 %>
+          <%= form.submit "Add", class: 'btn btn-block mt-3', style: 'background-color: #f6a400; color: #8b2900; font-weight: bold;' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
