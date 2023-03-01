@@ -22,7 +22,7 @@
         <td><%= transaction.pokemon_name_capitalized %></td>
         <td><%= number_to_currency(transaction.usd_amount, precision: 6) %></td>
         <td><%= number_to_currency(transaction.btc_amount * @bitcoin_price, precision: 6) %></td>
-        <td><%= button_to 'Sell', pokemons_sale_sell_path, params: { transaction_id: transaction.id, bitcoin_price: @bitcoin_price }, method: :post, class: 'btn btn-block text-format', style: 'background-color: #f6a400; font-weight: bold;', form_class: 'sign-out' %></td>
+        <td><%= button_to 'Sell', pokemons_sale_sell_path, params: { transaction_id: transaction.id, bitcoin_price: @bitcoin_price }, method: :post, class: 'btn btn-block text-format', style: 'background-color: #f6a400; font-weight: bold;', form_class: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>
