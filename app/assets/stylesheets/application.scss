@@ -26,6 +26,12 @@ footer {
   opacity: 0.0;
 }
 
+.align-app-body {
+  margin-top: 52px !important;
+  margin: auto;
+  width: 30%;
+}
+
 .table {
   background-color: white;
   margin-top: 52px !important;
@@ -44,4 +50,8 @@ footer {
 
 .pokemon-neutral{
   background-color: #FAFAD2;
+}
+
+.margin-bottom-50 {
+  margin-bottom: 50px;
 }
