@@ -9,6 +9,10 @@ class Wallet < ApplicationRecord
     self.save!
   end
 
+  def to_sell_transactions
+    transactions.where(sold: false)
+  end
+
   private
 
   def update_with_buy_transaction(transaction)
