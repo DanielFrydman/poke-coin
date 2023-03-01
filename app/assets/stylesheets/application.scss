@@ -26,24 +26,12 @@ footer {
   opacity: 0.0;
 }
 
-.carousel {
+.table {
+  background-color: white;
   margin-top: 52px !important;
   margin: auto;
-  width: 40%;
-}
-
-.carousel-inner {
-  height: 250px;
-}
-
-.carousel-caption {
-  border-radius: 1rem;
-  position: initial;
-  top: 50%;
-}
-
-.carousel-indicators {
-  position: initial;
+  width: 70%;
+  border-radius: 1rem !important;
 }
 
 .pokemon-appreciation{
@@ -56,26 +44,4 @@ footer {
 
 .pokemon-neutral{
   background-color: #FAFAD2;
-}
-
-.display-list-item{
-  display: list-item !important;
-}
-
-@media only screen and (max-width: 770px) {
-.carousel {
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width:771px) and (max-width:1040px) {
-.carousel {
-    width: 70%;
-  }
-}
-
-@media only screen and (min-width:1041) {
-  .carousel {
-    width: 90%;
-  }
 }
