@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   get '/pokemons_sale/index', to: 'pokemons_sale#index'
   post '/pokemons_sale/sell', to: 'pokemons_sale#sell'
+
+  get '/funds/index', to: 'funds#index'
+  post '/funds/buy', to: 'funds#buy'
 end
