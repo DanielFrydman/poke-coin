@@ -18,4 +18,8 @@ class User < ApplicationRecord
   def update_wallet_amount_with_transaction(transaction)
     wallet.update_amount_with_transaction(transaction)
   end
+
+  def to_sell_transactions
+    wallet.to_sell_transactions
+  end
 end
