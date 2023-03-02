@@ -81,4 +81,4 @@ test:
 #
 production:
   <<: *default
-  password: <%= ENV["POKE_COIN_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
