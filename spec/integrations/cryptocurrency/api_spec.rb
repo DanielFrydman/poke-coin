@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Cryptocurrency::Api do
   before do
-    stub_const('APP_CONFIG::COIN_API_KEY', '2C8BBEA8-9A58-40C7-A94D-A899B4D25CFF')
+    stub_const('APP_CONFIG::COIN_API_KEY', '')
   end
 
   let(:url) { 'https://rest.coinapi.io/v1/assets/BTC' }
