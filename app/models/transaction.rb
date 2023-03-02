@@ -35,6 +35,6 @@ class Transaction < ApplicationRecord
   end
 
   def visible_btc_amount
-    BigDecimal(btc_amount_to_s).to_s
+    BigDecimal(btc_amount_to_s).to_s[0..10]
   end
 end
