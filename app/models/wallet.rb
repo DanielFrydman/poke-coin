@@ -24,7 +24,15 @@ class Wallet < ApplicationRecord
   end
 
   def visible_btc_amount
-    BigDecimal(btc_amount_to_s).to_s
+    BigDecimal(btc_amount_to_s).to_s[0..10]
+  end
+
+  def to_sell_transactions_usd_amount
+    to_sell_transactions.sum(:usd_amount)
+  end
+
+  def to_sell_transactions_btc_amount
+    to_sell_transactions.sum(:btc_amount)
   end
 
   private
