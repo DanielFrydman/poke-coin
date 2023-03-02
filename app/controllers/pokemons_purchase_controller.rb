@@ -1,9 +1,7 @@
 class PokemonsPurchaseController < ApplicationController
   def index
     @pokemons = Pokemon::GetAllApi.build.execute
-    @bitcoin_price = Cryptocurrency::GetBitcoinApi.build.price
-  rescue PokemonCommunicationError,
-         CryptocurrencyCommunicationError => e
+  rescue PokemonCommunicationError => e
     redirect_to root_path, alert: e.message
   rescue StandardError
     redirect_to_root_path_with_error_message
