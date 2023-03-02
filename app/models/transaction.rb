@@ -29,4 +29,12 @@ class Transaction < ApplicationRecord
 
     sold? ? 'Yes' : 'No'
   end
+
+  def btc_amount_to_s
+    btc_amount.to_s
+  end
+
+  def visible_btc_amount
+    BigDecimal(btc_amount_to_s).to_s
+  end
 end
