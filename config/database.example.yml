@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: poke_coin_production
-  username: poke_coin
   password: <%= ENV["POKE_COIN_DATABASE_PASSWORD"] %>
