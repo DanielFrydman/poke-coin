@@ -20,6 +20,9 @@
     <div class="d-flex align-items-center" style="cursor: pointer;">
       <div>
         Funds: <%= number_to_currency(current_user.walelt_usd_amount) %> | &nbsp;
+      </div> 
+      <div>
+        Bitcoins: <%= current_user.visible_btc_amount %> | &nbsp;
       </div>
       <a href="/users/edit" class="text-format" style="text-decoration:none;">
         <label style="margin-top: 15px;"> <%= current_user.name %></label>
