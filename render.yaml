@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: poke-coin
+    databaseName: poke_coin_jr4o
+    user: poke_coin_jr4o_user
 
 services:
   - type: web
-    name: mysite
+    name: poke-coin
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: poke-coin
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
