@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rest.coinapi.io/v1/assets/BTC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      User-Agent:
+      - rest-client/2.1.0 (linux x86_64) ruby/3.2.0p0
+      X-Coinapi-Key:
+      - 2C8BBEA8-9A58-40C7-A94D-A899B4D25CFF
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Host:
+      - rest.coinapi.io
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 02 Mar 2023 20:58:46 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Concurrencylimit-Limit:
+      - '1'
+      X-Concurrencylimit-Remaining:
+      - '1'
+      X-Ratelimit-Used:
+      - '92'
+      X-Ratelimit-Overage:
+      - disabled
+      X-Ratelimit-Limit:
+      - '100'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '2023-03-03T20:58:47.5059931Z'
+      X-Ratelimit-Request-Cost:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        [
+          {
+            "asset_id": "BTC",
+            "name": "Bitcoin",
+            "type_is_crypto": 1,
+            "data_quote_start": "2014-02-24T17:43:05.0000000Z",
+            "data_quote_end": "2023-03-02T00:00:00.0000000Z",
+            "data_orderbook_start": "2014-02-24T17:43:05.0000000Z",
+            "data_orderbook_end": "2023-03-02T00:00:00.0000000Z",
+            "data_trade_start": "2010-07-17T23:09:17.0000000Z",
+            "data_trade_end": "2023-03-02T00:00:00.0000000Z",
+            "data_symbols_count": 138436,
+            "volume_1hrs_usd": 2110296768673.38,
+            "volume_1day_usd": 87409993152929.01,
+            "volume_1mth_usd": 12347071016011417.11,
+            "price_usd": 23450.449636533842174312300698,
+            "id_icon": "4caf2b16-a017-4e26-a348-2cea69c34cba",
+            "data_start": "2010-07-17",
+            "data_end": "2023-03-02"
+          }
+        ]
+    http_version: 
+  recorded_at: Thu, 02 Mar 2023 20:58:47 GMT
+recorded_with: VCR 3.0.3
