@@ -53,6 +53,14 @@ class User < ApplicationRecord
     end
   end
 
+  def to_sell_transactions_grouped_by_pokemon_name_with_btc_amount
+    return [['No pokemons yet...', 1]] if to_sell_transactions.empty?
+
+    to_sell_transactions.group_by(&:pokemon_name).map do |transaction|
+      ["#{transaction[0].capitalize} BTC Amount", transaction[1].sum(&:visible_btc_amount)]
+    end
+  end
+
   def add_funds(usd_quantity)
     wallet.add_funds(usd_quantity)
   end
