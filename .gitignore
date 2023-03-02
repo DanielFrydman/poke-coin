@@ -12,7 +12,6 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/config/database.yml
 /config/app.yml
 .byebug_history
 
