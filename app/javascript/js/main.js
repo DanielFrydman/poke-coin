@@ -2,6 +2,12 @@ import Swal from "sweetalert2"
 import * as sweetalert2 from "sweetalert2"
 
 window.addEventListener(('turbo:load'), () => {
+  let chart2 = document.getElementById('chart-2')
+  if (chart2 != undefined) {
+    chart2.style.margin = 'auto';
+    chart2.style.width = '50%';
+  }
+
   let flashNotice = document.getElementsByClassName('flash-notice')[0];
   let flasAlert = document.getElementsByClassName('flash-alert')[0];
   if (flashNotice != undefined) {
@@ -50,7 +56,7 @@ window.addEventListener(('turbo:load'), () => {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, sell it!'
       })
         .then((result) => {
           if (result.isConfirmed) {
