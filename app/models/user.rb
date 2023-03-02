@@ -15,6 +15,10 @@ class User < ApplicationRecord
     wallet.usd_amount
   end
 
+  def visible_btc_amount
+    wallet.visible_btc_amount
+  end
+
   def update_wallet_amount_with_transaction(transaction)
     wallet.update_amount_with_transaction(transaction)
   end
