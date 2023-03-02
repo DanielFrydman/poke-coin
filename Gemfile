@@ -17,6 +17,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
 gem 'sassc-rails'
 
+gem 'chartkick'
 gem 'devise', '~> 4.2'
 gem 'mime-types'
 gem 'rest-client'
