@@ -29,7 +29,7 @@ I also created a Github Pipeline to run all the created tests after each push.
 
 ##### Gems used in this project:
 ###### For application:
-[Pg](https://github.com/ged/ruby-pg)
+[Pg](https://github.com/ged/ruby-pg) \
 [Devise](https://github.com/heartcombo/devise) \
 [Rest Client](https://github.com/rest-client/rest-client) \
 [Mime Types](https://github.com/mime-types/ruby-mime-types) \
