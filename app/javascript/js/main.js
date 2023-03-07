@@ -47,7 +47,7 @@ window.addEventListener(('turbo:load'), () => {
         .catch(event.preventDefault())
     }
 
-    if (event.target && event.target.className === 'delete') {
+    if (event.target && event.target.className === 'delete-sell') {
       event.preventDefault()
       Swal.fire({
         title: 'Are you sure?',
@@ -60,7 +60,26 @@ window.addEventListener(('turbo:load'), () => {
       })
         .then((result) => {
           if (result.isConfirmed) {
-            document.querySelector('.delete').submit()
+            document.querySelector('.delete-sell').submit()
+          }
+        })
+        .catch(event.preventDefault())
+    }
+
+    if (event.target && event.target.className === 'delete-account') {
+      event.preventDefault()
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, cancel it!'
+      })
+        .then((result) => {
+          if (result.isConfirmed) {
+            document.querySelector('.delete-account').submit()
           }
         })
         .catch(event.preventDefault())
