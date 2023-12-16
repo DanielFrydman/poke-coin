@@ -9,7 +9,7 @@ This is a pokemon trade calculator where the users can buy and sell pokemons and
 ##### Deploy link for this application using [Render](https://render.com/):
 https://poke-coin-7qjr.onrender.com
 <br>
-***This link is no longer working because my database from Render has expired (free version).***
+***Please be aware that the link may be inactive, depending on when you access my repository, as the Render database associated with the free version could potentially have expired. Thank you for your understanding.***
 
 ##### Specific tasks to be implemented:
 ● Allow the investor to register the acquisition of new pokémons; \
